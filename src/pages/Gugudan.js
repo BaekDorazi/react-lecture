@@ -21,11 +21,21 @@ class Home extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     if (parseInt(this.state.value) === this.state.first * this.state.second) {
-      this.setState({
-        first: Math.ceil(Math.random() * 9),
-        second: Math.ceil(Math.random() * 9),
-        value: "",
-        result: this.state.value + " 정답!",
+      // this.setState({
+      //   first: Math.ceil(Math.random() * 9),
+      //   second: Math.ceil(Math.random() * 9),
+      //   value: "",
+      //   result: this.state.value + " 정답!",
+      // });
+
+      //함수형 setState
+      this.setState((prevState) => {
+        return {
+          first: Math.ceil(Math.random() * 9),
+          second: Math.ceil(Math.random() * 9),
+          value: "",
+          result: prevState.value + " 정답!",
+        };
       });
     } else {
       this.setState({
