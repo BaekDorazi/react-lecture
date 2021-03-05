@@ -7,7 +7,11 @@ class App extends Component {
     return (
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/gugudan" component={Gugudan} />
+        <Route path="/gugudan">
+          <Gugudan />
+          <Gugudan />
+          <Gugudan />
+        </Route>
       </div>
     );
   }

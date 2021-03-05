@@ -25,7 +25,7 @@ class Home extends Component {
         first: Math.ceil(Math.random() * 9),
         second: Math.ceil(Math.random() * 9),
         value: "",
-        result: "정답!",
+        result: this.state.value + " 정답!",
       });
     } else {
       this.setState({
@@ -39,16 +39,15 @@ class Home extends Component {
     const { first, second, value, result } = this.state;
 
     return (
-      <div>
-        <div>
-          {first}곱하기 {second}는?
-          <form onSubmit={this.onSubmit}>
-            <input type="number" value={value} onChange={this.onChange} />
-            <button>입력</button>
-          </form>
-          <div>{result}</div>
-        </div>
-      </div>
+      //쓸데없는 div태그 대신 React.Fragment 사용 element에서 안보임
+      <React.Fragment>
+        {first}곱하기 {second}는?
+        <form onSubmit={this.onSubmit}>
+          <input type="number" value={value} onChange={this.onChange} />
+          <button>입력</button>
+        </form>
+        <div>{result}</div>
+      </React.Fragment>
     );
   }
 }
