@@ -9,8 +9,6 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/gugudan">
           <Gugudan />
-          <Gugudan />
-          <Gugudan />
         </Route>
       </div>
     );

@@ -29,6 +29,7 @@ class Home extends Component {
       // });
 
       //함수형 setState
+      //예전 값으로 setState해주는 경우는 함수형 setState해주는게 좋음
       this.setState((prevState) => {
         return {
           first: Math.ceil(Math.random() * 9),
@@ -37,12 +38,19 @@ class Home extends Component {
           result: prevState.value + " 정답!",
         };
       });
+      this.input.focus();
     } else {
       this.setState({
         value: "",
         result: "땡!!!!",
       });
+      this.input.focus();
     }
+  };
+
+  input;
+  onRefInput = (c) => {
+    this.input = c;
   };
 
   render() {
@@ -53,7 +61,12 @@ class Home extends Component {
       <React.Fragment>
         {first}곱하기 {second}는?
         <form onSubmit={this.onSubmit}>
-          <input type="number" value={value} onChange={this.onChange} />
+          <input
+            type="number"
+            value={value}
+            onChange={this.onChange}
+            ref={this.onRefInput}
+          />
           <button>입력</button>
         </form>
         <div>{result}</div>
