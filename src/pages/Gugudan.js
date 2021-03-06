@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
-class Home extends Component {
+/////////////////////////////////
+//클래스 컴포넌트
+/////////////////////////////////
+class Gugudan extends Component {
   constructor(props) {
     super(props);
 
@@ -59,7 +62,9 @@ class Home extends Component {
     return (
       //쓸데없는 div태그 대신 React.Fragment 사용 element에서 안보임
       <React.Fragment>
-        {first}곱하기 {second}는?
+        <div>
+          {first}곱하기 {second}는?
+        </div>
         <form onSubmit={this.onSubmit}>
           <input
             type="number"
@@ -75,4 +80,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Gugudan;
